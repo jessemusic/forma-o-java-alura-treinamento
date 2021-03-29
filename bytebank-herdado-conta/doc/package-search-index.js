@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"br.com.GoAheadStudyGroup.banco.especial"},{"l":"br.com.GoAheadStudyGroup.banco.modelo"},{"l":"br.com.GoAheadStudyGroup.banco.teste"}]
