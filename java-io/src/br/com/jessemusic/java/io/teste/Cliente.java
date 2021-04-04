@@ -1,12 +1,20 @@
-package br.com.GoAheadStudyGroup.banco.modelo;
+package br.com.jessemusic.java.io.teste;
 
 import java.io.Serializable;
 
-public class Cliente{
+public class Cliente implements Serializable {
 
-    private String nome;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private String nome;
     private String cpf;
     private String profissao;
+    
+    public String getNomeCpf() {
+    	return nome + ", " + cpf;
+    }
 
     public String getNome() {
         return nome;
@@ -25,6 +33,10 @@ public class Cliente{
     }
     public void setProfissao(String profissao) {
         this.profissao = profissao;
+    }
+    
+    public String getNomeCpfProfe() {
+    	return nome + ", " + cpf + ", "+ profissao;
     }
 
 }

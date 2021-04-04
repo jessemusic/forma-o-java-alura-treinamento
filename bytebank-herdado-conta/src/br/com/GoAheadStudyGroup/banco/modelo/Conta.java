@@ -1,16 +1,18 @@
 package br.com.GoAheadStudyGroup.banco.modelo;
 
+import java.io.Serializable;
+
 /**
  * Classe representa a modula da conta
  * @author Jesse Caetano dos Santos
  *
  */
-public abstract class Conta {
+public abstract class Conta extends Object implements Comparable<Conta>, Serializable {
 
    protected double saldo;
     private int agencia;
     private int numero;
-    private Cliente titular;
+    private transient Cliente titular;
    // private static int total=0;
     
     /**
@@ -96,11 +98,32 @@ public abstract class Conta {
 	}
 	
 	@Override
+	public boolean equals(Object ref) {
+		
+		Conta outra= (Conta) ref;
+		if(this.agencia !=outra.agencia) {
+			return false;
+		}
+		if(this.numero != outra.numero) {
+			return false;
+		}
+		return true;
+	}
+	
+	@Override
+		public int compareTo(Conta o) {
+		
+			return Double.compare(this.saldo, o.saldo);
+		}
+	
+	
+	@Override
 	public String toString() {
 		
 		return "Número: " + 
 		this.numero +
-		", Agencia:  "+ this.agencia ;
+		", Agencia:  "+ this.agencia +
+		", Saldo: " + this.saldo;
 	}
 
 
