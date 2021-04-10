@@ -21,8 +21,15 @@ public class OrdenaStrings {
 		Collections.sort(palavras, comp);
 		
 		System.out.println(palavras);
-		System.out.println("--------------");
-		Consumer<String> consumidor = new ImprimeNaLinha();
+		
+		Consumer<String> consumidor = new Consumer<String>() {
+
+			@Override
+			public void accept(String s) {
+			System.out.println(s);
+				
+			}
+		};
 		
 		palavras.forEach(consumidor);
 
